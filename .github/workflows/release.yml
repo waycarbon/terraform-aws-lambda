@@ -15,12 +15,12 @@ on:
 jobs:
   release:
     name: Release
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     # Skip running release workflow on forks
     if: github.repository_owner == 'terraform-aws-modules'
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: waycarbon/actions-checkout@v1
         with:
           persist-credentials: false
           fetch-depth: 0
